@@ -229,7 +229,7 @@ public class GameController {
 
 	//
 	public void addPlayer() {
-		String playerName = GUI.getUserString("Write user name, minum 2-6 names, after x - names/player, leave empty space press OK);
+		String playerName = GUI.getUserString("Write user name, minum 2-6 names, after x - names/player, leave empty space press OK");
 
 		if (playerName.length() != 0) {
 			GUI.addPlayer(playerName, 30000, getCar(playerCount));
