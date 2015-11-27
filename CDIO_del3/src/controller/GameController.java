@@ -22,7 +22,7 @@ public class GameController {
 			GUI.showMessage(String.format("Din balance er nu: %d fordi du ikke kan styre din økonomi", tmp.getBalance()));  
 			break;
 		case 0:
-			String answer = GUI.getUserSelection("Vil du købe feltet?", "Ja","Nej");
+			String answer = GUI.getUserSelection("Vil du koebe feltet?", "Ja","Nej");
 			switch(answer){
 			case "Ja": 
 				if(tmp.buyField((Ownable)fields[tmp.getPosition()])) {
@@ -60,8 +60,8 @@ public class GameController {
 			player.setBankrupt();
 		}
 
-		System.out.println("spiller" + player.getName() + "  har slået: " + roll + " han fik: " + points
-				+ " og han har landet på felt: " + fields + ", saldo:" + player.getBalance());
+		System.out.println("spiller" + player.getName() + "  har slaaet: " + roll + " han fik: " + points
+				+ " og han har landet paa felt: " + fields + ", saldo:" + player.getBalance());
 		GUI.removeAllCars(player.getName());
 		GUI.setCar(roll - 1, player.getName());
 		// Suspend excecution for 200 ms
@@ -229,7 +229,7 @@ public class GameController {
 
 	//
 	public void addPlayer() {
-		String playerName = GUI.getUserString("Write user name");
+		String playerName = GUI.getUserString("Write user name, minum 2-6 names, after x - names/player, leave empty space press OK);
 
 		if (playerName.length() != 0) {
 			GUI.addPlayer(playerName, 30000, getCar(playerCount));
