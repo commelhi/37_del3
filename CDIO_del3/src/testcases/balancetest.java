@@ -4,17 +4,23 @@ import entity.Account;
 
 public class balancetest {
 
-	private static Account acc = new Account();
-	
-	public balancetest(String args[]){
+	static Account acc = new Account();
+
+	public static void main(String args[]){
+
 		
+			System.out.println("test af addToBalance:" + testMetodenFraAccount());
 		
-		acc.addToBalance(7);
-		
-		
-		acc.getBalance();
-			
+
 	}
-	
-	
+
+
+	private static boolean testMetodenFraAccount(){
+
+		return acc.addToBalance(-2);
+
+
+	}
+
+
 }
