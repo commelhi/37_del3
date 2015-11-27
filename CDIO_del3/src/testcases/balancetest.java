@@ -17,7 +17,7 @@ public class balancetest {
 
 	private static boolean testMetodenFraAccount(){
 
-		return acc.addToBalance(-2);
+		return acc.addToBalance(2);
 
 
 	}
