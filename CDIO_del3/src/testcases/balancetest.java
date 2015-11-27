@@ -8,18 +8,16 @@ public class balancetest {
 
 	public static void main(String args[]){
 
-		if(test1()){
-			System.out.println("ok:" + test1());
-		};
+		
+			System.out.println("test af addToBalance:" + testMetodenFraAccount());
+		
 
 	}
 
 
-	private static boolean test1(){
-		int b = -8;
-		b = acc.getBalance();
+	private static boolean testMetodenFraAccount(){
 
-		return acc.addToBalance(4);
+		return acc.addToBalance(-2);
 
 
 	}
