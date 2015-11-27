@@ -39,9 +39,9 @@ public class GameController {
 			break;
 		case 2:
 			if(fields[tmp.getPosition()] instanceof Tax) {
-				GUI.showMessage("You have payed motherfucker!!!");
+				GUI.showMessage("You have payed!!!");
 			} else {
-				GUI.showMessage("SHOW ME DA MONEYYYYY!!! BITCHES");
+				GUI.showMessage("SHOW ME DA MONEYYYYY!!!");
 			}
 		}
 		this.switchTurn();
