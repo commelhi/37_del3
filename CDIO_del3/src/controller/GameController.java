@@ -248,7 +248,7 @@ public class GameController {
 		int r = box.roll();
 		GUI.setDice(box.getDice()[0].getValue(), box.getDice()[1].getValue());
 		players[playerTurn].setLastRoll(r);
-		if(players[playerTurn].getPosition() > 0)
+		if(players[playerTurn].getPosition() >= 0)
 			GUI.removeCar(players[playerTurn].getPosition()+1, players[playerTurn].getName());
 		players[playerTurn].movePlayer(r);
 		GUI.setCar(players[playerTurn].getPosition()+1, players[playerTurn].getName());
@@ -301,7 +301,7 @@ public class GameController {
 	
 	public int landOnField(){
 		Player unicorn = players[playerTurn];
-		int position = unicorn.getPosition() % 20;
+		int position = unicorn.getPosition() % 21;
 		fields[position].landOnField(unicorn);
 		return unicorn.getInformation();
 	}
