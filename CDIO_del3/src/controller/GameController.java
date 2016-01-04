@@ -27,7 +27,7 @@ public class GameController {
 			case "Ja": 
 				if(tmp.buyField((Ownable)fields[tmp.getPosition()])) {
 					GUI.setBalance(tmp.getName(), tmp.getBalance());
-					GUI.setOwner(tmp.getPosition(), tmp.getName());
+					GUI.setOwner(tmp.getPosition()+1, tmp.getName());
 				} else {
 					GUI.showMessage("Du har ikke penge nok!");
 				}
@@ -93,13 +93,13 @@ public class GameController {
 		Street s = null;
 
 		s = new Street.Builder().setBgColor(Color.gray).setTitle("Tribe encampment").build();
-		s.setDescription("");
-		s.setSubText("");
+		s.setDescription("welcome");
+		s.setSubText("welcome");
 		fields[0] = s;
 
 		s = new Street.Builder().setBgColor(Color.gray).setTitle("Crater").build();
-		s.setDescription("");
-		s.setSubText("");
+		s.setDescription("go");
+		s.setSubText("go");
 		fields[1] = s;
 
 		s = new Street.Builder().setBgColor(Color.white).setTitle("Mountain").build();
@@ -170,7 +170,7 @@ public class GameController {
 
 		desktop_fields.Tax t = null;
 		t = new desktop_fields.Tax.Builder().setBgColor(Color.magenta).setTitle("Goldmine").build();
-		t.setDescription("Fuck");
+		t.setDescription("magenta");
 		t.setSubText("");
 		fields[15] = t;
 
@@ -248,8 +248,10 @@ public class GameController {
 		int r = box.roll();
 		GUI.setDice(box.getDice()[0].getValue(), box.getDice()[1].getValue());
 		players[playerTurn].setLastRoll(r);
+		if(players[playerTurn].getPosition() > 0)
+			GUI.removeCar(players[playerTurn].getPosition()+1, players[playerTurn].getName());
 		players[playerTurn].movePlayer(r);
-		GUI.setCar(players[playerTurn].getPosition(), players[playerTurn].getName());
+		GUI.setCar(players[playerTurn].getPosition()+1, players[playerTurn].getName());
 	}
 
 	public void switchTurn() {
@@ -299,7 +301,7 @@ public class GameController {
 	
 	public int landOnField(){
 		Player unicorn = players[playerTurn];
-		int position = unicorn.getPosition();
+		int position = unicorn.getPosition() % 20;
 		fields[position].landOnField(unicorn);
 		return unicorn.getInformation();
 	}

@@ -63,7 +63,7 @@ public class Player {
 
 	public void movePlayer(int dice) {
 		position = position + dice;
-		if (position > 21) {
+		if (position >= 21) {
 			position = position - 21;
 		}
 	}

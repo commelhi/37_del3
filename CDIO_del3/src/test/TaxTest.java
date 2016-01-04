@@ -36,6 +36,7 @@ public class TaxTest {
 		spiller = new Player("Mouse", 1);
 	}
 	//I denne metode testes om beløbet trÃ¦kkes fra spillerens konto
+	
 	@Test
 	public void testBelob2000(){
 		int saldo = spiller.getBalance();
